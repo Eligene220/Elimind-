@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d18">
+  <meta name="description" content="Elimind TV — Watch, share and grow.">
+  <title>Elimind TV — Watch • Share • Grow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn mobile-menu" id="menuToggle" aria-label="Open menu">☰</button>
+    <a class="brand" href="#" data-view="Home"><span class="brand-mark">E</span><span>Elimind<span class="brand-tv"> TV</span></span></a>
+    <form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="Search videos, creators..." aria-label="Search"><button aria-label="Search">⌕</button></form>
+    <div class="top-actions"><button class="upload-top" id="uploadTop">＋ Upload</button><button class="auth-top" id="authTop">Sign in</button><button class="avatar hidden" id="avatarTop" title="Account">U</button></div>
+  </header>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="side-group">
+      <button class="nav-link active" data-view="Home"><span>⌂</span> Home</button>
+      <button class="nav-link" data-view="Explore"><span>◈</span> Explore</button>
+      <button class="nav-link" data-view="Subscriptions"><span>▣</span> Subscriptions</button>
+      <button class="nav-link" data-view="History"><span>◷</span> Watch history</button>
+      <button class="nav-link" data-view="Playlists"><span>▤</span> My playlists</button>
+      <button class="nav-link" data-view="My Channel"><span>◎</span> My channel</button>
+    </div>
+    <div class="side-divider"></div>
+    <p class="side-label">EXPLORE CATEGORIES</p>
+    <div class="side-group" id="categoryNav">
+      <button class="nav-link category-link active" data-category="All"><span>✦</span> All videos</button>
+      <button class="nav-link category-link" data-category="Music"><span>♫</span> Music</button>
+      <button class="nav-link category-link" data-category="Movies & Entertainment"><span>▶</span> Movies & Entertainment</button>
+      <button class="nav-link category-link" data-category="Education"><span>▧</span> Education</button>
+      <button class="nav-link category-link" data-category="Sports"><span>⚽</span> Sports</button>
+    </div>
+    <div class="sidebar-bottom"><div class="mini-logo">E</div><div><strong>Elimind TV</strong><small>Watch · Share · Grow</small></div></div>
+  </aside>
+
+  <main class="main-content">
+    <section class="hero">
+      <div class="hero-copy"><span class="eyebrow"><i></i> YOUR WORLD. YOUR VIDEOS.</span><h1>Discover. Watch.<br><em>Be inspired.</em></h1><p>Music, entertainment, learning and sports — all in one place.</p><div class="hero-buttons"><button class="primary-btn" id="exploreBtn">Explore videos <span>→</span></button><button class="ghost-btn" id="heroUpload">＋ Upload your video</button></div></div>
+      <div class="hero-art"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="play-card"><span>▶</span></div><div class="floating-tag tag-one">✦ Discover</div><div class="floating-tag tag-two">♫ Music</div><div class="floating-tag tag-three">▶ Create</div></div>
+    </section>
+    <div class="welcome-row"><div><p class="eyebrow muted" id="sectionEyebrow">THE COMMUNITY FEED</p><h2 id="sectionTitle">Popular videos</h2></div><div class="sort-wrap"><span id="resultCount">Loading videos…</span><select id="sortSelect" aria-label="Sort videos"><option value="new">Newest</option><option value="popular">Most viewed</option></select></div></div>
+    <div class="chips" id="categoryChips"><button class="chip selected" data-category="All">All</button><button class="chip" data-category="Music">Music</button><button class="chip" data-category="Movies & Entertainment">Movies & Entertainment</button><button class="chip" data-category="Education">Education</button><button class="chip" data-category="Sports">Sports</button></div>
+    <section class="video-grid" id="videoGrid"><div class="loading-card">Connecting to Elimind TV…</div></section>
+    <section class="empty-state hidden" id="emptyState"><div class="empty-icon">◉</div><h3>No videos here yet</h3><p>Be the first creator to share something with the community.</p><button class="primary-btn" id="emptyUpload">Upload a video</button></section>
+    <footer><span>© <span id="year"></span> Elimind TV</span><span>Watch · Share · Grow</span></footer>
+  </main>
+
+  <div class="modal-backdrop hidden" id="authModal"><section class="modal auth-modal"><button class="modal-close" data-close="authModal">×</button><div class="modal-brand"><span class="brand-mark">E</span><span>Elimind TV</span></div><h2 id="authTitle">Welcome back</h2><p class="modal-sub" id="authSubtitle">Sign in to continue to your account.</p><form id="authForm"><label id="nameField" class="hidden">Your name<input id="fullName" autocomplete="name" placeholder="Your full name"></label><label>Email address<input id="email" type="email" autocomplete="email" required placeholder="you@example.com"></label><label>Password<input id="password" type="password" autocomplete="current-password" minlength="6" required placeholder="At least 6 characters"></label><button class="primary-btn full-btn" id="authSubmit">Sign in</button><p class="form-message" id="authMessage"></p></form><p class="switch-auth"><span id="switchText">New to Elimind TV?</span> <button id="switchAuth">Create account</button></p></section></div>
+
+  <div class="modal-backdrop hidden" id="uploadModal"><section class="modal"><button class="modal-close" data-close="uploadModal">×</button><p class="eyebrow muted">SHARE WITH THE COMMUNITY</p><h2>Upload a video</h2><p class="modal-sub">Choose a video file and add its details. MP4, WebM and MOV are supported.</p><form id="uploadForm"><label>Video title<input id="videoTitle" maxlength="160" required placeholder="Give your video a title"></label><label>Description<textarea id="videoDescription" rows="3" placeholder="What is this video about?"></textarea></label><label>Category<select id="videoCategory"><option>Music</option><option>Movies & Entertainment</option><option>Education</option><option>Sports</option><option>Other</option></select></label><label>Video file<input id="videoFile" type="file" accept="video/mp4,video/webm,video/quicktime,video/ogg" required></label><div class="upload-progress hidden" id="uploadProgress"><span></span></div><button class="primary-btn full-btn" id="uploadSubmit">Upload video</button><p class="form-message" id="uploadMessage"></p></form></section></div>
+
+  <div class="modal-backdrop hidden" id="playerModal"><section class="modal player-modal"><button class="modal-close" data-close="playerModal">×</button><video id="videoPlayer" controls playsinline></video><div class="player-info"><div><h2 id="playerTitle"></h2><p id="playerMeta"></p><p id="playerDescription"></p></div><div class="player-actions"><button id="likeBtn">♡ <span id="likeCount">0</span></button><button id="dislikeBtn">☹</button><button id="subscribeBtn">＋ Subscribe</button></div></div><div class="comments"><h3>Comments</h3><form id="commentForm"><input id="commentInput" placeholder="Add a comment…" maxlength="2000"><button class="primary-btn">Post</button></form><p class="form-message" id="commentMessage"></p><div id="commentList"></div></div></section></div>
+
+  <div class="modal-backdrop hidden" id="accountModal"><section class="modal"><button class="modal-close" data-close="accountModal">×</button><p class="eyebrow muted">YOUR ELIMIND ACCOUNT</p><h2 id="accountName">My account</h2><p id="accountEmail" class="modal-sub"></p><div class="account-actions"><button class="secondary-btn" id="profileBtn">Edit profile name</button><button class="secondary-btn" id="historyBtn">View watch history</button><button class="danger-btn" id="logoutBtn">Sign out</button></div><p class="form-message" id="accountMessage"></p></section></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
